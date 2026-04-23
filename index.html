@@ -30,7 +30,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2rem;height:56px;d
 .hero-tag{display:inline-flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:11px;color:var(--accent2);letter-spacing:.08em;border:1px solid rgba(45,224,176,.2);padding:5px 14px;border-radius:20px;background:rgba(45,224,176,.04);margin-bottom:1.5rem;animation:fadeUp .5s ease both}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--accent2);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
-.hero-name{font-size:clamp(2.6rem,6vw,4.5rem);font-weight:700;line-height:1.06;letter-spacing:-.03em;animation:fadeUp .5s .08s ease both}
+.hero-name{font-size:clamp(2rem,6vw,4.5rem);font-weight:700;line-height:1.06;letter-spacing:-.03em;animation:fadeUp .5s .08s ease both}
 .hero-name .last{background:linear-gradient(130deg,var(--accent) 0%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-subtitle{font-size:1rem;color:var(--text2);margin-top:.9rem;max-width:480px;font-weight:300;line-height:1.75;animation:fadeUp .5s .16s ease both}
 .hero-contacts{display:flex;flex-wrap:wrap;gap:14px;margin-top:1.5rem;animation:fadeUp .5s .24s ease both}
@@ -42,11 +42,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2rem;height:56px;d
 .btn-outline{background:transparent;color:var(--text2);border:1px solid var(--border2)}.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 /* PHOTO */
-.photo-frame{width:220px;height:265px;border-radius:20px;border:1px solid var(--border2);position:relative;overflow:hidden;background:var(--card);animation:fadeUp .5s .1s ease both;flex-shrink:0}
+.photo-frame{width:200px;height:240px;border-radius:20px;border:1px solid var(--border2);position:relative;overflow:hidden;background:var(--card);animation:fadeUp .5s .1s ease both;flex-shrink:0}
 .photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
-.photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px}
-.photo-placeholder svg{width:48px;height:48px;stroke:var(--text3);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.photo-placeholder p{font-size:11px;color:var(--text3);font-family:'DM Mono',monospace;text-align:center;line-height:1.7}
 .photo-accent{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
 .photo-badge{position:absolute;bottom:14px;left:14px;background:rgba(9,13,19,.88);backdrop-filter:blur(8px);border:1px solid var(--border2);border-radius:8px;padding:6px 10px}
 .photo-badge p{font-family:'DM Mono',monospace;font-size:10px;color:var(--accent2);letter-spacing:.06em}
@@ -123,7 +120,25 @@ section{padding:5rem 2rem}
 .contact-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 .contact-meta{display:flex;align-items:center;justify-content:center;gap:8px;font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);margin-top:1.25rem}
 footer{padding:1.5rem 2rem;text-align:center;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:11px;color:var(--text3)}
-@media(max-width:860px){.hero-inner{grid-template-columns:1fr}.photo-frame{display:none}.projects-grid{grid-template-columns:1fr}.nav-links{display:none}section{padding:3.5rem 1rem}}
+/* RESPONSIVE - Version corrigée avec photo visible sur mobile */
+@media(max-width:860px){
+  .hero-inner{grid-template-columns:1fr;text-align:center;gap:2rem}
+  .hero-tag{justify-content:center}
+  .hero-subtitle{margin-left:auto;margin-right:auto}
+  .hero-contacts{justify-content:center}
+  .hero-cta{justify-content:center}
+  .photo-frame{width:160px;height:192px;margin:0 auto}
+  .projects-grid{grid-template-columns:1fr}
+  section{padding:3rem 1rem}
+}
+@media(max-width:480px){
+  .hero-name{font-size:1.8rem}
+  .modal-body{padding:1.25rem}
+  .modal-title{font-size:1.2rem}
+  .contact-card{padding:1.5rem}
+  .photo-frame{width:140px;height:168px}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+}
 </style>
 </head>
 <body>
@@ -188,22 +203,22 @@ footer{padding:1.5rem 2rem;text-align:center;border-top:1px solid var(--border);
     <h2 class="section-heading" id="lbl-skills-heading">Technical <span>Skills</span></h2>
     <div class="skills-grid">
       <div class="skill-card">
-        <div class="skill-icon-wrap" style="background:rgba(79,142,247,.08);border-color:rgba(79,142,247,.2)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+        <div class="skill-icon-wrap" style="background:rgba(79,142,247,.08);border-color:rgba(79,142,247,.2)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg></div>
         <p class="skill-cat" id="cat-net">Networking</p>
-        <div class="tags"><span class="tag">LAN/VLAN</span><span class="tag">OSPF</span><span class="tag">pfSense</span><span class="tag">Fortigate</span><span class="tag">HSRP</span><span class="tag">STP</span><span class="tag">EtherChannel</span><span class="tag">VoIP</span><span class="tag">Cisco</span></div>
+        <div class="tags"><span class="tag">LAN/VLAN</span><span class="tag">OSPF</span><span class="tag">pfSense</span><span class="tag">Fortigate</span><span class="tag">HSRP</span><span class="tag">STP</span><span class="tag">EtherChannel</span><span class="tag">Cisco</span></div>
       </div>
       <div class="skill-card">
-        <div class="skill-icon-wrap" style="background:rgba(45,224,176,.08);border-color:rgba(45,224,176,.2)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2de0b0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <div class="skill-icon-wrap" style="background:rgba(45,224,176,.08);border-color:rgba(45,224,176,.2)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2de0b0" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
         <p class="skill-cat" id="cat-sys">Systems</p>
-        <div class="tags"><span class="tag">Linux</span><span class="tag">Windows Server</span><span class="tag">WDS</span><span class="tag">SCCM</span><span class="tag">MySQL</span><span class="tag">Oracle DB</span><span class="tag">GLPI</span></div>
+        <div class="tags"><span class="tag">Linux</span><span class="tag">Windows Server</span><span class="tag">WDS</span><span class="tag">SCCM</span><span class="tag">MySQL</span><span class="tag">GLPI</span></div>
       </div>
       <div class="skill-card">
-        <div class="skill-icon-wrap" style="background:rgba(247,147,79,.08);border-color:rgba(247,147,79,.2)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f7934f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <div class="skill-icon-wrap" style="background:rgba(247,147,79,.08);border-color:rgba(247,147,79,.2)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f7934f" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
         <p class="skill-cat" id="cat-virt">Virtualization & Tools</p>
         <div class="tags"><span class="tag">VMware</span><span class="tag">VirtualBox</span><span class="tag">Proxmox</span><span class="tag">GNS3</span><span class="tag">EVE-NG</span><span class="tag">Splunk</span></div>
       </div>
       <div class="skill-card">
-        <div class="skill-icon-wrap" style="background:rgba(79,142,247,.08);border-color:rgba(79,142,247,.2)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="skill-icon-wrap" style="background:rgba(79,142,247,.08);border-color:rgba(79,142,247,.2)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <p class="skill-cat" id="cat-support">IT Support</p>
         <div class="tags"><span class="tag" id="t1">Maintenance</span><span class="tag" id="t2">Diagnostics</span><span class="tag" id="t3">Tech Support</span><span class="tag" id="t4">Firewall Config</span><span class="tag" id="t5">Monitoring</span></div>
       </div>
@@ -216,69 +231,7 @@ footer{padding:1.5rem 2rem;text-align:center;border-top:1px solid var(--border);
   <div class="container">
     <p class="section-label" id="lbl-proj-tag">Portfolio</p>
     <h2 class="section-heading" id="lbl-proj-heading">Key <span>Projects</span></h2>
-    <div class="projects-grid">
-
-      <div class="proj-card" onclick="openModal(0)">
-        <div class="proj-illus" style="background:linear-gradient(135deg,#0a1628,#0d1f3a)">
-          <svg width="320" height="155" viewBox="0 0 320 155"><circle cx="160" cy="77" r="52" fill="none" stroke="rgba(79,142,247,.12)" stroke-width="1"/><circle cx="160" cy="77" r="32" fill="none" stroke="rgba(79,142,247,.18)" stroke-width="1"/><circle cx="160" cy="77" r="16" fill="rgba(79,142,247,.1)" stroke="rgba(79,142,247,.4)" stroke-width="1"/><circle cx="160" cy="77" r="5" fill="#4f8ef7"/><circle cx="90" cy="42" r="7" fill="rgba(45,224,176,.12)" stroke="rgba(45,224,176,.5)" stroke-width="1"/><circle cx="90" cy="42" r="3" fill="#2de0b0"/><circle cx="230" cy="42" r="7" fill="rgba(45,224,176,.12)" stroke="rgba(45,224,176,.5)" stroke-width="1"/><circle cx="230" cy="42" r="3" fill="#2de0b0"/><circle cx="75" cy="112" r="7" fill="rgba(247,147,79,.12)" stroke="rgba(247,147,79,.5)" stroke-width="1"/><circle cx="75" cy="112" r="3" fill="#f7934f"/><circle cx="245" cy="112" r="7" fill="rgba(247,147,79,.12)" stroke="rgba(247,147,79,.5)" stroke-width="1"/><circle cx="245" cy="112" r="3" fill="#f7934f"/><circle cx="160" cy="18" r="7" fill="rgba(79,142,247,.12)" stroke="rgba(79,142,247,.5)" stroke-width="1"/><circle cx="160" cy="18" r="3" fill="#4f8ef7"/><line x1="90" y1="42" x2="145" y2="70" stroke="rgba(45,224,176,.25)" stroke-width="1" stroke-dasharray="4,3"/><line x1="230" y1="42" x2="175" y2="70" stroke="rgba(45,224,176,.25)" stroke-width="1" stroke-dasharray="4,3"/><line x1="75" y1="112" x2="147" y2="85" stroke="rgba(247,147,79,.25)" stroke-width="1" stroke-dasharray="4,3"/><line x1="245" y1="112" x2="173" y2="85" stroke="rgba(247,147,79,.25)" stroke-width="1" stroke-dasharray="4,3"/><line x1="160" y1="18" x2="160" y2="61" stroke="rgba(79,142,247,.25)" stroke-width="1" stroke-dasharray="4,3"/><circle cx="160" cy="77" r="20" fill="none" stroke="rgba(79,142,247,.18)" stroke-width="1"><animate attributeName="r" values="16;28;16" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values=".4;0;.4" dur="3s" repeatCount="indefinite"/></circle><text x="160" y="144" text-anchor="middle" fill="rgba(79,142,247,.5)" font-size="9" font-family="monospace" letter-spacing="2">CLOUD MONITORING</text></svg>
-        </div>
-        <div class="proj-body">
-          <p class="proj-num">01 / 04</p>
-          <p class="proj-title" id="p1-title">Cloud Monitoring Solution</p>
-          <p class="proj-desc" id="p1-desc">Design and deployment of a cloud monitoring solution tailored to a modern infrastructure. Real-time monitoring of service performance and availability.</p>
-          <div class="proj-footer">
-            <div class="tags"><span class="tag">Cloud</span><span class="tag">Monitoring</span><span class="tag">Infrastructure</span></div>
-            <span class="proj-more" id="pm1">View details <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="proj-card" onclick="openModal(1)">
-        <div class="proj-illus" style="background:linear-gradient(135deg,#0d1520,#111a28)">
-          <svg width="320" height="155" viewBox="0 0 320 155"><rect x="25" y="28" width="115" height="8" rx="2" fill="rgba(45,224,176,.07)" stroke="rgba(45,224,176,.2)" stroke-width=".5"/><rect x="25" y="43" width="85" height="8" rx="2" fill="rgba(45,224,176,.05)" stroke="rgba(45,224,176,.12)" stroke-width=".5"/><rect x="25" y="58" width="105" height="8" rx="2" fill="rgba(247,147,79,.08)" stroke="rgba(247,147,79,.25)" stroke-width=".5"/><rect x="25" y="73" width="75" height="8" rx="2" fill="rgba(45,224,176,.05)" stroke="rgba(45,224,176,.12)" stroke-width=".5"/><rect x="25" y="88" width="95" height="8" rx="2" fill="rgba(79,142,247,.07)" stroke="rgba(79,142,247,.2)" stroke-width=".5"/><rect x="25" y="103" width="65" height="8" rx="2" fill="rgba(45,224,176,.05)" stroke="rgba(45,224,176,.12)" stroke-width=".5"/><path d="M155 75 L185 75" stroke="rgba(45,224,176,.45)" stroke-width="1.5" stroke-dasharray="4,3"/><polygon points="185,71 193,75 185,79" fill="rgba(45,224,176,.45)"/><rect x="200" y="42" width="95" height="70" rx="8" fill="rgba(45,224,176,.05)" stroke="rgba(45,224,176,.25)" stroke-width="1"/><text x="248" y="68" text-anchor="middle" fill="#2de0b0" font-size="11" font-family="monospace" font-weight="bold">SPLUNK</text><rect x="215" y="78" width="65" height="5" rx="2" fill="rgba(45,224,176,.28)"/><rect x="215" y="89" width="45" height="5" rx="2" fill="rgba(45,224,176,.18)"/><rect x="215" y="100" width="55" height="5" rx="2" fill="rgba(45,224,176,.12)"/><circle cx="287" cy="46" r="5" fill="#f7934f"><animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/></circle><text x="160" y="144" text-anchor="middle" fill="rgba(45,224,176,.45)" font-size="9" font-family="monospace" letter-spacing="2">LOG CENTRALIZATION</text></svg>
-        </div>
-        <div class="proj-body">
-          <p class="proj-num">02 / 04</p>
-          <p class="proj-title" id="p2-title">Log Centralization with Splunk</p>
-          <p class="proj-desc" id="p2-desc">Centralized log collection using Splunk from multiple sources. Indexing, analysis and anomaly detection for improved security.</p>
-          <div class="proj-footer">
-            <div class="tags"><span class="tag">Splunk</span><span class="tag">SIEM</span><span class="tag">Security</span></div>
-            <span class="proj-more" id="pm2">View details <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="proj-card" onclick="openModal(2)">
-        <div class="proj-illus" style="background:linear-gradient(135deg,#0e1320,#0c1828)">
-          <svg width="320" height="155" viewBox="0 0 320 155"><rect x="22" y="52" width="66" height="50" rx="6" fill="rgba(79,142,247,.07)" stroke="rgba(79,142,247,.28)" stroke-width="1"/><text x="55" y="73" text-anchor="middle" fill="rgba(79,142,247,.75)" font-size="9" font-family="monospace">SITE A</text><rect x="32" y="80" width="46" height="4" rx="1" fill="rgba(79,142,247,.28)"/><rect x="32" y="89" width="32" height="4" rx="1" fill="rgba(79,142,247,.18)"/><rect x="127" y="28" width="66" height="50" rx="6" fill="rgba(45,224,176,.07)" stroke="rgba(45,224,176,.28)" stroke-width="1"/><text x="160" y="49" text-anchor="middle" fill="rgba(45,224,176,.75)" font-size="9" font-family="monospace">SITE B</text><rect x="137" y="56" width="46" height="4" rx="1" fill="rgba(45,224,176,.28)"/><rect x="137" y="65" width="32" height="4" rx="1" fill="rgba(45,224,176,.18)"/><rect x="232" y="52" width="66" height="50" rx="6" fill="rgba(247,147,79,.07)" stroke="rgba(247,147,79,.28)" stroke-width="1"/><text x="265" y="73" text-anchor="middle" fill="rgba(247,147,79,.75)" font-size="9" font-family="monospace">SITE C</text><rect x="242" y="80" width="46" height="4" rx="1" fill="rgba(247,147,79,.28)"/><rect x="242" y="89" width="32" height="4" rx="1" fill="rgba(247,147,79,.18)"/><path d="M88 77 Q107 52 127 52" stroke="rgba(79,142,247,.35)" stroke-width="1.5" fill="none" stroke-dasharray="5,3"/><path d="M193 52 Q212 52 232 77" stroke="rgba(45,224,176,.35)" stroke-width="1.5" fill="none" stroke-dasharray="5,3"/><path d="M88 82 Q160 128 232 82" stroke="rgba(247,147,79,.2)" stroke-width="1" fill="none" stroke-dasharray="4,4"/><rect x="122" y="116" width="76" height="18" rx="4" fill="rgba(79,142,247,.07)" stroke="rgba(79,142,247,.18)" stroke-width=".5"/><text x="160" y="129" text-anchor="middle" fill="rgba(79,142,247,.65)" font-size="9" font-family="monospace">HSRP · OSPF · STP</text><text x="160" y="148" text-anchor="middle" fill="rgba(79,142,247,.38)" font-size="9" font-family="monospace" letter-spacing="2">MULTI-SITE NETWORK</text></svg>
-        </div>
-        <div class="proj-body">
-          <p class="proj-num">03 / 04</p>
-          <p class="proj-title" id="p3-title">Multi-site High Availability Network</p>
-          <p class="proj-desc" id="p3-desc">Design of a multi-site network with VLAN segmentation, HSRP redundancy, OSPF dynamic routing, STP and EtherChannel link aggregation.</p>
-          <div class="proj-footer">
-            <div class="tags"><span class="tag">VLAN</span><span class="tag">HSRP</span><span class="tag">OSPF</span></div>
-            <span class="proj-more" id="pm3">View details <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="proj-card" onclick="openModal(3)">
-        <div class="proj-illus" style="background:linear-gradient(135deg,#0f1420,#131a28)">
-          <svg width="320" height="155" viewBox="0 0 320 155"><rect x="22" y="47" width="78" height="60" rx="6" fill="rgba(79,142,247,.07)" stroke="rgba(79,142,247,.28)" stroke-width="1"/><text x="61" y="68" text-anchor="middle" fill="rgba(79,142,247,.75)" font-size="8" font-family="monospace">WDS SERVER</text><rect x="34" y="76" width="54" height="4" rx="1" fill="rgba(79,142,247,.28)"/><rect x="34" y="86" width="38" height="4" rx="1" fill="rgba(79,142,247,.18)"/><circle cx="34" cy="62" r="3" fill="#2de0b0"><animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/></circle><path d="M100 77 L138 77" stroke="rgba(79,142,247,.38)" stroke-width="1.5"/><polygon points="138,73 146,77 138,81" fill="rgba(79,142,247,.38)"/><rect x="146" y="52" width="58" height="50" rx="6" fill="rgba(45,224,176,.05)" stroke="rgba(45,224,176,.22)" stroke-width="1"/><text x="175" y="72" text-anchor="middle" fill="rgba(45,224,176,.75)" font-size="8" font-family="monospace">SCCM</text><rect x="158" y="80" width="38" height="4" rx="1" fill="rgba(45,224,176,.28)"/><rect x="158" y="90" width="26" height="4" rx="1" fill="rgba(45,224,176,.18)"/><path d="M204 67 L234 47" stroke="rgba(247,147,79,.3)" stroke-width="1" stroke-dasharray="4,3"/><path d="M204 77 L234 77" stroke="rgba(247,147,79,.3)" stroke-width="1" stroke-dasharray="4,3"/><path d="M204 87 L234 107" stroke="rgba(247,147,79,.3)" stroke-width="1" stroke-dasharray="4,3"/><rect x="234" y="35" width="60" height="26" rx="4" fill="rgba(247,147,79,.07)" stroke="rgba(247,147,79,.28)" stroke-width="1"/><text x="264" y="51" text-anchor="middle" fill="rgba(247,147,79,.65)" font-size="8" font-family="monospace">PC 1  ✓</text><rect x="234" y="65" width="60" height="26" rx="4" fill="rgba(247,147,79,.07)" stroke="rgba(247,147,79,.28)" stroke-width="1"/><text x="264" y="81" text-anchor="middle" fill="rgba(247,147,79,.65)" font-size="8" font-family="monospace">PC 2  ✓</text><rect x="234" y="95" width="60" height="26" rx="4" fill="rgba(247,147,79,.07)" stroke="rgba(247,147,79,.28)" stroke-width="1"/><text x="264" y="111" text-anchor="middle" fill="rgba(247,147,79,.65)" font-size="8" font-family="monospace">PC 3  ✓</text><text x="160" y="144" text-anchor="middle" fill="rgba(247,147,79,.42)" font-size="9" font-family="monospace" letter-spacing="2">WINDOWS 11 DEPLOY</text></svg>
-        </div>
-        <div class="proj-body">
-          <p class="proj-num">04 / 04</p>
-          <p class="proj-title" id="p4-title">Automated Windows 11 Deployment</p>
-          <p class="proj-desc" id="p4-desc">Automated deployment of Windows 11 on client workstations using WDS and SCCM. Centralized OS installation, configuration management and asset monitoring.</p>
-          <div class="proj-footer">
-            <div class="tags"><span class="tag">WDS</span><span class="tag">SCCM</span><span class="tag">Windows 11</span></div>
-            <span class="proj-more" id="pm4">View details <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    <div class="projects-grid" id="projects-grid"></div>
   </div>
 </section>
 
@@ -301,10 +254,10 @@ footer{padding:1.5rem 2rem;text-align:center;border-top:1px solid var(--border);
         <div class="langs-grid" style="margin-bottom:1rem">
           <div class="lang-card"><span class="lang-name" id="lang-fr">French</span><span class="lang-lvl" id="lang-fr-lvl">Native</span></div>
           <div class="lang-card"><span class="lang-name" id="lang-wo">Wolof</span><span class="lang-lvl" id="lang-wo-lvl">Native</span></div>
-          <div class="lang-card"><span class="lang-name" id="lang-en">English</span><span class="lang-lvl" id="lang-en-lvl">Beginner</span></div>
+          <div class="lang-card"><span class="lang-name" id="lang-en">English</span><span class="lang-lvl" id="lang-en-lvl">Intermediate (B1)</span></div>
         </div>
         <div class="lang-card" style="gap:10px;justify-content:flex-start">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6M3 15h6"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6M3 15h6"/></svg>
           <span class="lang-name" id="misc-license">Driving License B</span>
           <span class="lang-lvl" id="misc-avail">· Available immediately</span>
         </div>
@@ -320,10 +273,10 @@ footer{padding:1.5rem 2rem;text-align:center;border-top:1px solid var(--border);
       <h2 class="contact-title" id="contact-title">Let's work together</h2>
       <p class="contact-sub" id="contact-sub">Available for an IT support internship or remote freelance missions. Fast response guaranteed.</p>
       <div class="contact-btns">
-        <a class="btn btn-primary" href="mailto:gueyeabdou657@gmail.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span id="cta-email">Send an email</span></a>
-        <a class="btn btn-outline" href="tel:+221771833608"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg><span id="cta-call">Call me</span></a>
+        <a class="btn btn-primary" href="mailto:gueyeabdou657@gmail.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span id="cta-email">Send an email</span></a>
+        <a class="btn btn-outline" href="tel:+221771833608"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg><span id="cta-call">Call me</span></a>
       </div>
-      <div class="contact-meta"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Dakar, Senegal · GMT+0</div>
+      <div class="contact-meta"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Dakar, Senegal · GMT+0</div>
     </div>
   </div>
 </section>
@@ -339,142 +292,18 @@ footer{padding:1.5rem 2rem;text-align:center;border-top:1px solid var(--border);
 </div>
 
 <script>
-const lang = {en:{}, fr:{}};
-
 const PROJECTS = {
   en:[
-    {
-      num:"01 / 04",
-      category:"Cloud & Infrastructure",
-      title:"Cloud Monitoring Solution",
-      context:"Academic report — ISI Dakar, 2023-2024",
-      summary:"Study and implementation of a network supervision solution using Nagios XI deployed on Infomaniak's cloud infrastructure. The goal was to provide centralized, real-time monitoring of all critical services: Linux servers, Windows servers, web servers and MySQL databases, with multi-channel alerts (email, SMS, Telegram).",
-      objectives:[
-        "Analyze and compare available cloud monitoring tools (Nagios, Zabbix, Prometheus, Datadog, AWS CloudWatch, Azure Monitor, Google Cloud Monitoring)",
-        "Select the most appropriate solution for an OpenStack cloud environment",
-        "Design and deploy a cloud network architecture with multiple interconnected instances",
-        "Configure monitoring for Linux hosts, Windows hosts, web servers and MySQL databases",
-        "Set up multi-channel alert notifications: email (Gmail/Postfix), SMS (Twilio) and Telegram (Bot API)"
-      ],
-      steps:[
-        "Comparative study of 7 monitoring tools based on: cloud integration, ease of installation, features, usability and cost",
-        "Selection of Nagios XI for its versatility, open-source nature, advanced alert management and OpenStack compatibility",
-        "Cloud architecture deployment on Infomaniak Cloud (OpenStack) : router (servers-net-router), Nagios XI server, web server, MariaDB database server and Windows Server — all on internal network 10.0.0.0/24",
-        "Installation of Nagios XI on Ubuntu 22.04 LTS via terminal commands",
-        "Adding Linux hosts via NRPE agent, Windows hosts via NSClient++ agent",
-        "Adding web server monitoring (availability, response time) and MySQL database monitoring",
-        "Postfix/Gmail relay configuration for email alerts with application password",
-        "Telegram Bot creation via @BotFather and bash script for Telegram notifications",
-        "SMS alerts configuration via Twilio API",
-        "Full testing: service stops/restarts (Nginx, MySQL), simulated network outages, alert reception validation on all 3 channels"
-      ],
-      tools:["Nagios XI","OpenStack","Ubuntu 22.04 LTS","NRPE (Linux agent)","NSClient++ (Windows agent)","Postfix / Gmail SMTP","Twilio (SMS)","Telegram Bot API","MariaDB","Nginx","Infomaniak Cloud (OpenStack)","Nova / Neutron / Cinder"],
-      result:"Fully operational monitoring solution covering 4 hosts (Linux, Windows, web server, database). Alerts successfully received in real time via email, SMS and Telegram during tests. The platform detects service incidents instantly and notifies administrators with no significant delay.",
-      bg:"linear-gradient(135deg,#0a1628,#0d1f3a)"
-    },
-    {
-      num:"02 / 04",
-      category:"Security & SIEM",
-      title:"Log Centralization with Splunk",
-      context:"Academic project — ISI Dakar, 2024",
-      summary:"Implementation of a SIEM (Security Information and Event Management) solution using Splunk to centralize, index and analyze logs from multiple sources across the infrastructure.",
-      objectives:["Centralize logs from different sources into a single platform","Enable fast search and analysis of security events","Detect anomalies and suspicious behaviors","Create custom dashboards for monitoring"],
-      steps:["Installation and configuration of Splunk on a dedicated server","Deployment of Splunk Universal Forwarder on target machines","Configuration of data inputs: system logs, network events, application logs","Creation of search queries (SPL) for event analysis","Setup of alerts for detecting suspicious behaviors","Building dashboards for real-time visualization"],
-      tools:["Splunk Enterprise","Splunk Universal Forwarder","Linux","Windows Server","SPL (Search Processing Language)"],
-      result:"SIEM platform operational with centralized collection of over 5 log sources. Dashboards allow real-time visibility on security events with automated alerts.",
-      bg:"linear-gradient(135deg,#0d1520,#111a28)"
-    },
-    {
-      num:"03 / 04",
-      category:"Network Architecture",
-      title:"Multi-site High Availability Network",
-      context:"Academic project — ISI Dakar, 2024",
-      summary:"Design and full configuration of a multi-site network infrastructure with redundancy and high availability. The project simulates the real network of a company with multiple offices requiring continuous service.",
-      objectives:["Design a robust and redundant multi-site architecture","Implement network segmentation for security","Ensure high availability with automatic failover","Configure dynamic routing for optimal traffic management"],
-      steps:["Network topology design: 3 interconnected sites","VLAN segmentation: separate network per department (management, users, servers, voice)","Inter-VLAN routing configuration via SVI on Layer 3 switches","HSRP (Hot Standby Router Protocol) for gateway redundancy","OSPF configuration for dynamic routing between sites","STP (Spanning Tree Protocol) to prevent network loops","EtherChannel for bandwidth aggregation between switches","Testing failover and verifying continuity of service"],
-      tools:["Cisco IOS","GNS3","EVE-NG","VLAN","OSPF","HSRP","STP","EtherChannel"],
-      result:"Fully functional multi-site infrastructure with automatic failover tested and validated. In case of failure of the primary link, the network automatically switches to the backup route in less than 1 second thanks to HSRP.",
-      bg:"linear-gradient(135deg,#0e1320,#0c1828)"
-    },
-    {
-      num:"04 / 04",
-      category:"Systems & Automation",
-      title:"Automated Windows 11 Deployment",
-      context:"Academic project — ISI Dakar, 2024",
-      summary:"Implementation of an automated OS deployment solution for Windows 11 client workstations using WDS and SCCM. Eliminates manual installation on each machine, saving time and ensuring consistency across the entire fleet.",
-      objectives:["Automate Windows 11 installation on multiple workstations simultaneously","Standardize configurations and software across all machines","Reduce deployment time from several hours to minutes per machine","Centralize fleet management and monitoring"],
-      steps:["Installation and configuration of WDS (Windows Deployment Services) on Windows Server","Capture of a reference Windows 11 image with pre-installed tools","SCCM configuration for automated deployment and fleet management","Creation of deployment task sequences","PXE Boot configuration for network deployment","Testing on 3 client machines with full deployment validation","Post-deployment verification: drivers, updates, software","Configuration of SCCM for inventory and ongoing monitoring"],
-      tools:["WDS (Windows Deployment Services)","SCCM (System Center Configuration Manager)","Windows Server","Windows 11","PXE Boot","Active Directory"],
-      result:"3 client workstations fully deployed in under 20 minutes each (vs 1-2 hours manual). Identical configurations, integrated inventory and centralized update management via SCCM.",
-      bg:"linear-gradient(135deg,#0f1420,#131a28)"
-    }
+    {num:"01 / 04",category:"Cloud & Infrastructure",title:"Cloud Monitoring Solution",context:"Academic report — ISI Dakar, 2023-2024",summary:"Study and implementation of a network supervision solution using Nagios XI deployed on Infomaniak's cloud infrastructure. The goal was to provide centralized, real-time monitoring of all critical services: Linux servers, Windows servers, web servers and MySQL databases, with multi-channel alerts (email, SMS, Telegram).",objectives:["Analyze and compare available cloud monitoring tools (Nagios, Zabbix, Prometheus, Datadog, AWS CloudWatch, Azure Monitor, Google Cloud Monitoring)","Select the most appropriate solution for an OpenStack cloud environment","Design and deploy a cloud network architecture with multiple interconnected instances","Configure monitoring for Linux hosts, Windows hosts, web servers and MySQL databases","Set up multi-channel alert notifications: email (Gmail/Postfix), SMS (Twilio) and Telegram (Bot API)"],steps:["Comparative study of 7 monitoring tools based on: cloud integration, ease of installation, features, usability and cost","Selection of Nagios XI for its versatility, open-source nature, advanced alert management and OpenStack compatibility","Cloud architecture deployment on Infomaniak Cloud (OpenStack) : router (servers-net-router), Nagios XI server, web server, MariaDB database server and Windows Server — all on internal network 10.0.0.0/24","Installation of Nagios XI on Ubuntu 22.04 LTS via terminal commands","Adding Linux hosts via NRPE agent, Windows hosts via NSClient++ agent","Adding web server monitoring (availability, response time) and MySQL database monitoring","Postfix/Gmail relay configuration for email alerts with application password","Telegram Bot creation via @BotFather and bash script for Telegram notifications","SMS alerts configuration via Twilio API","Full testing: service stops/restarts (Nginx, MySQL), simulated network outages, alert reception validation on all 3 channels"],tools:["Nagios XI","OpenStack","Ubuntu 22.04 LTS","NRPE (Linux agent)","NSClient++ (Windows agent)","Postfix / Gmail SMTP","Twilio (SMS)","Telegram Bot API","MariaDB","Nginx","Infomaniak Cloud (OpenStack)"],result:"Fully operational monitoring solution covering 4 hosts (Linux, Windows, web server, database). Alerts successfully received in real time via email, SMS and Telegram during tests. The platform detects service incidents instantly and notifies administrators with no significant delay.",bg:"linear-gradient(135deg,#0a1628,#0d1f3a)"},
+    {num:"02 / 04",category:"Security & SIEM",title:"Log Centralization with Splunk",context:"Academic project — ISI Dakar, 2024",summary:"Implementation of a SIEM (Security Information and Event Management) solution using Splunk to centralize, index and analyze logs from multiple sources across the infrastructure.",objectives:["Centralize logs from different sources into a single platform","Enable fast search and analysis of security events","Detect anomalies and suspicious behaviors","Create custom dashboards for monitoring"],steps:["Installation and configuration of Splunk on a dedicated server","Deployment of Splunk Universal Forwarder on target machines","Configuration of data inputs: system logs, network events, application logs","Creation of search queries (SPL) for event analysis","Setup of alerts for detecting suspicious behaviors","Building dashboards for real-time visualization"],tools:["Splunk Enterprise","Splunk Universal Forwarder","Linux","Windows Server","SPL"],result:"SIEM platform operational with centralized collection of over 5 log sources. Dashboards allow real-time visibility on security events with automated alerts.",bg:"linear-gradient(135deg,#0d1520,#111a28)"},
+    {num:"03 / 04",category:"Network Architecture",title:"Multi-site High Availability Network",context:"Academic project — ISI Dakar, 2024",summary:"Design and full configuration of a multi-site network infrastructure with redundancy and high availability. The project simulates the real network of a company with multiple offices requiring continuous service.",objectives:["Design a robust and redundant multi-site architecture","Implement network segmentation for security","Ensure high availability with automatic failover","Configure dynamic routing for optimal traffic management"],steps:["Network topology design: 3 interconnected sites","VLAN segmentation: separate network per department","Inter-VLAN routing configuration via SVI on Layer 3 switches","HSRP for gateway redundancy","OSPF configuration for dynamic routing between sites","STP to prevent network loops","EtherChannel for bandwidth aggregation between switches","Testing failover and verifying continuity of service"],tools:["Cisco IOS","GNS3","EVE-NG","VLAN","OSPF","HSRP","STP","EtherChannel"],result:"Fully functional multi-site infrastructure with automatic failover tested and validated. In case of failure, the network automatically switches to backup route in less than 1 second thanks to HSRP.",bg:"linear-gradient(135deg,#0e1320,#0c1828)"},
+    {num:"04 / 04",category:"Systems & Automation",title:"Automated Windows 11 Deployment",context:"Academic project — ISI Dakar, 2024",summary:"Implementation of an automated OS deployment solution for Windows 11 using WDS and SCCM.",objectives:["Automate Windows 11 installation on multiple workstations simultaneously","Standardize configurations and software across all machines","Reduce deployment time from several hours to minutes per machine","Centralize fleet management and monitoring"],steps:["Installation and configuration of WDS on Windows Server","Capture of a reference Windows 11 image with pre-installed tools","SCCM configuration for automated deployment and fleet management","Creation of deployment task sequences","PXE Boot configuration for network deployment","Testing on 3 client machines with full deployment validation","Post-deployment verification: drivers, updates, software","Configuration of SCCM for inventory and ongoing monitoring"],tools:["WDS","SCCM","Windows Server","Windows 11","PXE Boot","Active Directory"],result:"3 client workstations fully deployed in under 20 minutes each (vs 1-2 hours manual). Identical configurations, integrated inventory and centralized update management via SCCM.",bg:"linear-gradient(135deg,#0f1420,#131a28)"}
   ],
   fr:[
-    {
-      num:"01 / 04",
-      category:"Cloud & Infrastructure",
-      title:"Solution de Supervision Cloud",
-      context:"Rapport de licence — ISI Dakar, 2023-2024",
-      summary:"Étude et mise en place d'une solution de supervision réseau utilisant Nagios XI, déployée sur le cloud Infomaniak. L'objectif était de disposer d'une surveillance centralisée et en temps réel de tous les services critiques : serveurs Linux, Windows, serveur web et base de données MySQL, avec des alertes multi-canaux (email, SMS, Telegram).",
-      objectives:[
-        "Analyser et comparer les outils de supervision cloud disponibles (Nagios, Zabbix, Prometheus, Datadog, AWS CloudWatch, Azure Monitor, Google Cloud Monitoring)",
-        "Sélectionner la solution la plus adaptée à un environnement cloud OpenStack",
-        "Concevoir et déployer une architecture réseau cloud avec plusieurs instances interconnectées",
-        "Configurer la supervision des hôtes Linux, Windows, du serveur web et de la base de données MySQL",
-        "Mettre en place des alertes multi-canaux : email (Gmail/Postfix), SMS (Twilio) et Telegram (Bot API)"
-      ],
-      steps:[
-        "Étude comparative de 7 outils de supervision selon les critères : intégration cloud, facilité d'installation, fonctionnalités, facilité d'utilisation et coût",
-        "Sélection de Nagios XI pour sa polyvalence, son caractère open source, sa gestion avancée des alertes et sa compatibilité avec OpenStack",
-        "Déploiement de l'architecture cloud sur Infomaniak (OpenStack) : routeur (servers-net-router), serveur Nagios XI, serveur web, serveur de base de données MariaDB et Windows Server — tous sur le réseau interne 10.0.0.0/24",
-        "Installation de Nagios XI sur Ubuntu 22.04 LTS via les commandes terminal",
-        "Ajout des hôtes Linux via l'agent NRPE, des hôtes Windows via l'agent NSClient++",
-        "Ajout de la supervision du serveur web (disponibilité, temps de réponse) et de la base de données MySQL",
-        "Configuration du relais Postfix/Gmail pour les alertes email avec mot de passe d'application Google",
-        "Création d'un Bot Telegram via @BotFather et script bash pour les notifications Telegram",
-        "Configuration des alertes SMS via l'API Twilio",
-        "Tests complets : arrêts/redémarrages de services (Nginx, MySQL), simulation de pannes réseau, validation de la réception des alertes sur les 3 canaux"
-      ],
-      tools:["Nagios XI","OpenStack","Ubuntu 22.04 LTS","NRPE (agent Linux)","NSClient++ (agent Windows)","Postfix / Gmail SMTP","Twilio (SMS)","API Telegram Bot","MariaDB","Nginx","Infomaniak Cloud (OpenStack)","Nova / Neutron / Cinder"],
-      result:"Solution de supervision entièrement opérationnelle couvrant 4 hôtes (Linux, Windows, serveur web, base de données). Alertes reçues en temps réel par email, SMS et Telegram lors des tests. La plateforme détecte les incidents de service instantanément et notifie les administrateurs sans délai significatif.",
-      bg:"linear-gradient(135deg,#0a1628,#0d1f3a)"
-    },
-    {
-      num:"02 / 04",
-      category:"Sécurité & SIEM",
-      title:"Centralisation des Logs avec Splunk",
-      context:"Projet académique — ISI Dakar, 2024",
-      summary:"Mise en place d'une solution SIEM (Security Information and Event Management) avec Splunk pour centraliser, indexer et analyser les logs issus de plusieurs sources de l'infrastructure.",
-      objectives:["Centraliser les logs de différentes sources dans une seule plateforme","Permettre une recherche et analyse rapide des événements de sécurité","Détecter les anomalies et comportements suspects","Créer des tableaux de bord personnalisés pour la surveillance"],
-      steps:["Installation et configuration de Splunk sur un serveur dédié","Déploiement du Splunk Universal Forwarder sur les machines cibles","Configuration des entrées de données : logs système, événements réseau, logs applicatifs","Création de requêtes de recherche (SPL) pour l'analyse des événements","Mise en place d'alertes pour la détection de comportements suspects","Construction de tableaux de bord pour la visualisation en temps réel"],
-      tools:["Splunk Enterprise","Splunk Universal Forwarder","Linux","Windows Server","SPL (Search Processing Language)"],
-      result:"Plateforme SIEM opérationnelle avec collecte centralisée de plus de 5 sources de logs. Les tableaux de bord permettent une visibilité en temps réel sur les événements de sécurité avec des alertes automatiques.",
-      bg:"linear-gradient(135deg,#0d1520,#111a28)"
-    },
-    {
-      num:"03 / 04",
-      category:"Architecture Réseau",
-      title:"Réseau Multi-sites Haute Disponibilité",
-      context:"Projet académique — ISI Dakar, 2024",
-      summary:"Conception et configuration complète d'une infrastructure réseau multisites avec redondance et haute disponibilité. Le projet simule le réseau réel d'une entreprise avec plusieurs bureaux nécessitant une continuité de service.",
-      objectives:["Concevoir une architecture multisites robuste et redondante","Mettre en place la segmentation réseau pour la sécurité","Assurer la haute disponibilité avec basculement automatique","Configurer le routage dynamique pour une gestion optimale du trafic"],
-      steps:["Conception de la topologie réseau : 3 sites interconnectés","Segmentation VLAN : réseau séparé par département (gestion, utilisateurs, serveurs, voix)","Configuration du routage inter-VLAN via SVI sur les switches de couche 3","HSRP (Hot Standby Router Protocol) pour la redondance de passerelle","Configuration OSPF pour le routage dynamique entre les sites","STP (Spanning Tree Protocol) pour éviter les boucles réseau","EtherChannel pour l'agrégation de bande passante entre les switches","Tests de basculement et vérification de la continuité de service"],
-      tools:["Cisco IOS","GNS3","EVE-NG","VLAN","OSPF","HSRP","STP","EtherChannel"],
-      result:"Infrastructure multisites entièrement fonctionnelle avec basculement automatique testé et validé. En cas de panne du lien principal, le réseau bascule automatiquement sur la route de secours en moins d'1 seconde grâce à HSRP.",
-      bg:"linear-gradient(135deg,#0e1320,#0c1828)"
-    },
-    {
-      num:"04 / 04",
-      category:"Systèmes & Automatisation",
-      title:"Déploiement Automatisé de Windows 11",
-      context:"Projet académique — ISI Dakar, 2024",
-      summary:"Mise en place d'une solution de déploiement automatisé du système d'exploitation Windows 11 sur des postes clients via WDS et SCCM. Élimine l'installation manuelle sur chaque machine, permettant un gain de temps considérable et une cohérence sur tout le parc.",
-      objectives:["Automatiser l'installation de Windows 11 sur plusieurs postes simultanément","Standardiser les configurations et logiciels sur toutes les machines","Réduire le temps de déploiement de plusieurs heures à quelques minutes par machine","Centraliser la gestion et la supervision du parc informatique"],
-      steps:["Installation et configuration de WDS sur Windows Server","Capture d'une image de référence Windows 11 avec les outils pré-installés","Configuration de SCCM pour le déploiement automatisé et la gestion du parc","Création des séquences de tâches de déploiement","Configuration du PXE Boot pour le déploiement réseau","Tests sur 3 machines clientes avec validation complète du déploiement","Vérification post-déploiement : pilotes, mises à jour, logiciels","Configuration de SCCM pour l'inventaire et la supervision continue"],
-      tools:["WDS (Windows Deployment Services)","SCCM (System Center Configuration Manager)","Windows Server","Windows 11","PXE Boot","Active Directory"],
-      result:"3 postes clients entièrement déployés en moins de 20 minutes chacun (contre 1 à 2 heures en manuel). Configurations identiques, inventaire intégré et gestion centralisée des mises à jour via SCCM.",
-      bg:"linear-gradient(135deg,#0f1420,#131a28)"
-    }
+    {num:"01 / 04",category:"Cloud & Infrastructure",title:"Solution de Supervision Cloud",context:"Rapport de licence — ISI Dakar, 2023-2024",summary:"Étude et mise en place d'une solution de supervision réseau utilisant Nagios XI, déployée sur le cloud Infomaniak. L'objectif était de disposer d'une surveillance centralisée et en temps réel de tous les services critiques : serveurs Linux, Windows, serveur web et base de données MySQL, avec des alertes multi-canaux (email, SMS, Telegram).",objectives:["Analyser et comparer les outils de supervision cloud disponibles (Nagios, Zabbix, Prometheus, Datadog, AWS CloudWatch, Azure Monitor, Google Cloud Monitoring)","Sélectionner la solution la plus adaptée à un environnement cloud OpenStack","Concevoir et déployer une architecture réseau cloud avec plusieurs instances interconnectées","Configurer la supervision des hôtes Linux, Windows, du serveur web et de la base de données MySQL","Mettre en place des alertes multi-canaux : email (Gmail/Postfix), SMS (Twilio) et Telegram (Bot API)"],steps:["Étude comparative de 7 outils de supervision selon les critères : intégration cloud, facilité d'installation, fonctionnalités, facilité d'utilisation et coût","Sélection de Nagios XI pour sa polyvalence, son caractère open source, sa gestion avancée des alertes et sa compatibilité avec OpenStack","Déploiement de l'architecture cloud sur Infomaniak (OpenStack) : routeur, serveur Nagios XI, serveur web, serveur MariaDB et Windows Server","Installation de Nagios XI sur Ubuntu 22.04 LTS","Ajout des hôtes Linux via NRPE, Windows via NSClient++","Ajout de la supervision du serveur web et MySQL","Configuration Postfix/Gmail pour les alertes email","Création d'un Bot Telegram et script bash","Configuration des alertes SMS via Twilio","Tests complets : arrêts de services, simulation de pannes"],tools:["Nagios XI","OpenStack","Ubuntu 22.04 LTS","NRPE","NSClient++","Postfix/Gmail","Twilio","Telegram Bot API","MariaDB","Nginx"],result:"Solution de supervision entièrement opérationnelle couvrant 4 hôtes. Alertes reçues en temps réel par email, SMS et Telegram lors des tests.",bg:"linear-gradient(135deg,#0a1628,#0d1f3a)"},
+    {num:"02 / 04",category:"Sécurité & SIEM",title:"Centralisation des Logs avec Splunk",context:"Projet académique — ISI Dakar, 2024",summary:"Mise en place d'une solution SIEM avec Splunk pour centraliser, indexer et analyser les logs issus de plusieurs sources de l'infrastructure.",objectives:["Centraliser les logs de différentes sources","Permettre une recherche rapide des événements de sécurité","Détecter les anomalies","Créer des tableaux de bord personnalisés"],steps:["Installation de Splunk","Déploiement des forwarders","Configuration des entrées de données","Création de requêtes SPL","Mise en place d'alertes","Construction de dashboards"],tools:["Splunk Enterprise","Splunk Universal Forwarder","Linux","Windows Server","SPL"],result:"Plateforme SIEM opérationnelle avec collecte centralisée de plus de 5 sources de logs.",bg:"linear-gradient(135deg,#0d1520,#111a28)"},
+    {num:"03 / 04",category:"Architecture Réseau",title:"Réseau Multi-sites Haute Disponibilité",context:"Projet académique — ISI Dakar, 2024",summary:"Conception et configuration complète d'une infrastructure réseau multisites avec redondance et haute disponibilité.",objectives:["Architecture multisites robuste","Segmentation réseau","Haute disponibilité","Routage dynamique"],steps:["Topologie 3 sites","Segmentation VLAN","Routage inter-VLAN","HSRP pour redondance","OSPF","STP","EtherChannel","Tests de basculement"],tools:["Cisco IOS","GNS3","EVE-NG","VLAN","OSPF","HSRP","STP","EtherChannel"],result:"Basculement automatique en moins d'1 seconde grâce à HSRP.",bg:"linear-gradient(135deg,#0e1320,#0c1828)"},
+    {num:"04 / 04",category:"Systèmes & Automatisation",title:"Déploiement Automatisé de Windows 11",context:"Projet académique — ISI Dakar, 2024",summary:"Solution de déploiement automatisé de Windows 11 via WDS et SCCM.",objectives:["Automatiser l'installation","Standardiser les configurations","Réduire le temps de déploiement","Centraliser la gestion"],steps:["Installation WDS","Capture image référence","Configuration SCCM","Création séquences","Configuration PXE Boot","Tests de déploiement","Vérification post-déploiement"],tools:["WDS","SCCM","Windows Server","Windows 11","PXE Boot","Active Directory"],result:"3 postes déployés en moins de 20 minutes chacun.",bg:"linear-gradient(135deg,#0f1420,#131a28)"}
   ]
 };
 
@@ -487,13 +316,35 @@ const ILLUS = [
 
 let currentLang = 'en';
 
+function renderProjects() {
+  const container = document.getElementById('projects-grid');
+  const projects = PROJECTS[currentLang];
+  container.innerHTML = '';
+  projects.forEach((p, i) => {
+    const card = document.createElement('div');
+    card.className = 'proj-card';
+    card.onclick = () => openModal(i);
+    card.innerHTML = `
+      <div class="proj-illus" style="background:${p.bg}">${ILLUS[i]}</div>
+      <div class="proj-body">
+        <p class="proj-num">${p.num}</p>
+        <p class="proj-title">${p.title}</p>
+        <p class="proj-desc">${p.summary.substring(0, 120)}${p.summary.length > 120 ? '...' : ''}</p>
+        <div class="proj-footer">
+          <div class="tags"><span class="tag">${p.category.split(' & ')[0]}</span><span class="tag">${p.tools[0]}</span></div>
+          <span class="proj-more">${currentLang === 'en' ? 'View details' : 'Voir détails'} <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
 function openModal(i) {
   const p = PROJECTS[currentLang][i];
   document.getElementById('modal-illus').style.background = p.bg;
   document.getElementById('modal-illus').innerHTML = ILLUS[i];
-  const labels = currentLang === 'en'
-    ? {obj:'Objectives', steps:'Steps', tools:'Tools & Technologies', result:'Result'}
-    : {obj:'Objectifs', steps:'Étapes réalisées', tools:'Outils & Technologies', result:'Résultat'};
+  const labels = currentLang === 'en' ? {obj:'Objectives', steps:'Steps', tools:'Tools & Technologies', result:'Result'} : {obj:'Objectifs', steps:'Étapes réalisées', tools:'Outils & Technologies', result:'Résultat'};
   document.getElementById('modal-body').innerHTML = `
     <div class="modal-tag">${p.num} · ${p.category}</div>
     <h2 class="modal-title">${p.title}</h2>
@@ -511,16 +362,17 @@ function openModal(i) {
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
+
 function closeModal() {
   document.getElementById('modal-overlay').classList.remove('open');
   document.body.style.overflow = '';
 }
+
 function closeModalOutside(e) {
   if(e.target === document.getElementById('modal-overlay')) closeModal();
 }
-document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
 
-const T={en:{"nav-about":"About","nav-skills":"Skills","nav-projects":"Projects","nav-edu":"Education","nav-contact":"Contact","hero-tag":"Available for internship · Dakar, Senegal","hero-subtitle":"Network & IT Systems Technician — specializing in network administration, Linux/Windows systems, virtualization & IT support.","badge-text":"OPEN TO WORK","cta-contact":"Get in touch","cta-projects":"View projects","stat1":"Key Projects","stat2":"Years Learning","stat3":"Tools Mastered","stat4":"Languages","about-text":"Graduate with a Professional Bachelor's Degree in Networking and Computer Systems from ISI Dakar, passionate about information technology. Strong skills in network administration, Linux/Windows systems management, virtualization, and IT security. Seeking an IT support internship.","lbl-skills-tag":"Expertise","lbl-skills-heading":"Technical Skills","cat-net":"Networking","cat-sys":"Systems","cat-virt":"Virtualization & Tools","cat-support":"IT Support","t1":"Maintenance","t2":"Diagnostics","t3":"Tech Support","t4":"Firewall Config","t5":"Monitoring","lbl-proj-tag":"Portfolio","lbl-proj-heading":"Key Projects","p1-title":"Cloud Monitoring Solution","p1-desc":"Design and deployment of a cloud monitoring solution tailored to a modern infrastructure. Real-time monitoring of service performance and availability.","p2-title":"Log Centralization with Splunk","p2-desc":"Centralized log collection using Splunk from multiple sources. Indexing, analysis and anomaly detection for improved security.","p3-title":"Multi-site High Availability Network","p3-desc":"Design of a multi-site network with VLAN segmentation, HSRP redundancy, OSPF dynamic routing, STP and EtherChannel link aggregation.","p4-title":"Automated Windows 11 Deployment","p4-desc":"Automated deployment of Windows 11 on client workstations using WDS and SCCM. Centralized OS installation, configuration management and asset monitoring.","pm1":"View details","pm2":"View details","pm3":"View details","pm4":"View details","lbl-edu-tag":"Background","lbl-edu-heading":"Education","edu1":"Professional Bachelor's — Networking & IT Systems","edu2":"Scientific Baccalaureate (S2)","edu3":"Middle School Certificate (BFEM)","lbl-lang-tag":"Languages","lbl-lang-heading":"Languages & Other","lang-fr":"French","lang-fr-lvl":"Native","lang-wo":"Wolof","lang-wo-lvl":"Native","lang-en":"English","lang-en-lvl":"Beginner","misc-license":"Driving License B","misc-avail":"· Available immediately","contact-title":"Let's work together","contact-sub":"Available for an IT support internship or remote freelance missions. Fast response guaranteed.","cta-email":"Send an email","cta-call":"Call me"},fr:{"nav-about":"À propos","nav-skills":"Compétences","nav-projects":"Projets","nav-edu":"Formation","nav-contact":"Contact","hero-tag":"Disponible pour un stage · Dakar, Sénégal","hero-subtitle":"Technicien Réseaux & Systèmes Informatiques — spécialisé en administration réseaux, systèmes Linux/Windows, virtualisation & support informatique.","badge-text":"DISPONIBLE","cta-contact":"Me contacter","cta-projects":"Voir les projets","stat1":"Projets réalisés","stat2":"Ans de formation","stat3":"Outils maîtrisés","stat4":"Langues","about-text":"Diplômé en Licence Professionnelle en Réseaux et Systèmes Informatiques à l'ISI Dakar, passionné par les technologies de l'information. Compétences solides en administration de réseaux, gestion de systèmes Linux/Windows, virtualisation et sécurité. À la recherche d'un stage en support informatique.","lbl-skills-tag":"Expertise","lbl-skills-heading":"Compétences techniques","cat-net":"Réseaux","cat-sys":"Systèmes","cat-virt":"Virtualisation & Outils","cat-support":"Support Informatique","t1":"Maintenance","t2":"Diagnostic","t3":"Assistance technique","t4":"Config. pare-feu","t5":"Surveillance réseau","lbl-proj-tag":"Portfolio","lbl-proj-heading":"Projets clés","p1-title":"Solution de Supervision Cloud","p1-desc":"Conception et déploiement d'une solution de supervision cloud adaptée à une infrastructure moderne. Surveillance en temps réel des performances et de la disponibilité des services.","p2-title":"Centralisation des Logs avec Splunk","p2-desc":"Centralisation des logs via Splunk pour collecter, indexer et analyser les données. Détection d'anomalies et amélioration de la sécurité.","p3-title":"Réseau Multi-sites Haute Disponibilité","p3-desc":"Conception d'une infrastructure réseau multisites avec segmentation VLAN, HSRP, OSPF, STP et EtherChannel pour l'agrégation de liens.","p4-title":"Déploiement Automatisé de Windows 11","p4-desc":"Déploiement automatisé de Windows 11 sur postes clients via WDS et SCCM. Installation centralisée, gestion des configurations et supervision du parc.","pm1":"Voir détails","pm2":"Voir détails","pm3":"Voir détails","pm4":"Voir détails","lbl-edu-tag":"Parcours","lbl-edu-heading":"Formation","edu1":"Licence Pro — Réseaux & Systèmes Informatiques","edu2":"Baccalauréat Scientifique (S2)","edu3":"BFEM","lbl-lang-tag":"Langues","lbl-lang-heading":"Langues & Divers","lang-fr":"Français","lang-fr-lvl":"Natif","lang-wo":"Wolof","lang-wo-lvl":"Natif","lang-en":"Anglais","lang-en-lvl":"Débutant","misc-license":"Permis B","misc-avail":"· Disponible immédiatement","contact-title":"Travaillons ensemble","contact-sub":"Disponible pour un stage en support informatique ou des missions freelance à distance. Réponse rapide garantie.","cta-email":"Envoyer un email","cta-call":"Appeler"}};
+const T={en:{"nav-about":"About","nav-skills":"Skills","nav-projects":"Projects","nav-edu":"Education","nav-contact":"Contact","hero-tag":"Available for internship · Dakar, Senegal","hero-subtitle":"Network & IT Systems Technician — specializing in network administration, Linux/Windows systems, virtualization & IT support.","badge-text":"OPEN TO WORK","cta-contact":"Get in touch","cta-projects":"View projects","stat1":"Key Projects","stat2":"Years Learning","stat3":"Tools Mastered","stat4":"Languages","about-text":"Graduate with a Professional Bachelor's Degree in Networking and Computer Systems from ISI Dakar, passionate about information technology. Strong skills in network administration, Linux/Windows systems management, virtualization, and IT security.","lbl-skills-tag":"Expertise","lbl-skills-heading":"Technical Skills","cat-net":"Networking","cat-sys":"Systems","cat-virt":"Virtualization & Tools","cat-support":"IT Support","t1":"Maintenance","t2":"Diagnostics","t3":"Tech Support","t4":"Firewall Config","t5":"Monitoring","lbl-proj-tag":"Portfolio","lbl-proj-heading":"Key Projects","lbl-edu-tag":"Background","lbl-edu-heading":"Education","edu1":"Professional Bachelor's — Networking & IT Systems","edu2":"Scientific Baccalaureate (S2)","edu3":"Middle School Certificate (BFEM)","lbl-lang-tag":"Languages","lbl-lang-heading":"Languages & Other","lang-fr":"French","lang-fr-lvl":"Native","lang-wo":"Wolof","lang-wo-lvl":"Native","lang-en":"English","lang-en-lvl":"Intermediate (B1)","misc-license":"Driving License B","misc-avail":"· Available immediately","contact-title":"Let's work together","contact-sub":"Available for an IT support internship or remote freelance missions. Fast response guaranteed.","cta-email":"Send an email","cta-call":"Call me"},fr:{"nav-about":"À propos","nav-skills":"Compétences","nav-projects":"Projets","nav-edu":"Formation","nav-contact":"Contact","hero-tag":"Disponible pour un stage · Dakar, Sénégal","hero-subtitle":"Technicien Réseaux & Systèmes Informatiques — spécialisé en administration réseaux, systèmes Linux/Windows, virtualisation & support informatique.","badge-text":"DISPONIBLE","cta-contact":"Me contacter","cta-projects":"Voir les projets","stat1":"Projets réalisés","stat2":"Ans de formation","stat3":"Outils maîtrisés","stat4":"Langues","about-text":"Diplômé d'une Licence Professionnelle en Réseaux et Systèmes Informatiques à l'ISI Dakar, passionné par les technologies de l'information. Compétences solides en administration de réseaux, gestion de systèmes Linux/Windows, virtualisation et sécurité.","lbl-skills-tag":"Expertise","lbl-skills-heading":"Compétences techniques","cat-net":"Réseaux","cat-sys":"Systèmes","cat-virt":"Virtualisation & Outils","cat-support":"Support Informatique","t1":"Maintenance","t2":"Diagnostic","t3":"Assistance technique","t4":"Config. pare-feu","t5":"Surveillance réseau","lbl-proj-tag":"Portfolio","lbl-proj-heading":"Projets clés","lbl-edu-tag":"Parcours","lbl-edu-heading":"Formation","edu1":"Licence Professionnelle — Réseaux & Systèmes","edu2":"Baccalauréat Scientifique (S2)","edu3":"BFEM","lbl-lang-tag":"Langues","lbl-lang-heading":"Langues & Divers","lang-fr":"Français","lang-fr-lvl":"Natif","lang-wo":"Wolof","lang-wo-lvl":"Natif","lang-en":"Anglais","lang-en-lvl":"Intermédiaire (B1)","misc-license":"Permis B","misc-avail":"· Disponible immédiatement","contact-title":"Travaillons ensemble","contact-sub":"Disponible pour un stage en support informatique ou des missions freelance à distance. Réponse rapide garantie.","cta-email":"Envoyer un email","cta-call":"Appeler"}};
 
 function setLang(l){
   currentLang=l;
@@ -529,10 +381,17 @@ function setLang(l){
   document.getElementById('btn-en').classList.toggle('active',l==='en');
   document.getElementById('btn-fr').classList.toggle('active',l==='fr');
   document.documentElement.lang=l;
+  renderProjects();
 }
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:.08});
-document.querySelectorAll('.skill-card,.proj-card,.tl-item,.lang-card,.stat-card').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(14px)';el.style.transition='opacity .45s ease, transform .45s ease';obs.observe(el)});
+
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'})})});
+
+const observer = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:.08});
+document.querySelectorAll('.skill-card,.tl-item,.lang-card,.stat-card').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(14px)';el.style.transition='opacity .45s ease, transform .45s ease';observer.observe(el)});
+
+renderProjects();
+setLang('en');
 </script>
 </body>
 </html>
