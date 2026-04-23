@@ -348,7 +348,7 @@ const PROJECTS = {
       category:"Cloud & Infrastructure",
       title:"Cloud Monitoring Solution",
       context:"Academic report — ISI Dakar, 2023-2024",
-      summary:"Study and implementation of a network supervision solution using Nagios XI deployed on an OpenStack cloud infrastructure. The goal was to provide centralized, real-time monitoring of all critical services: Linux servers, Windows servers, web servers and MySQL databases, with multi-channel alerts (email, SMS, Telegram).",
+      summary:"Study and implementation of a network supervision solution using Nagios XI deployed on Infomaniak's cloud infrastructure. The goal was to provide centralized, real-time monitoring of all critical services: Linux servers, Windows servers, web servers and MySQL databases, with multi-channel alerts (email, SMS, Telegram).",
       objectives:[
         "Analyze and compare available cloud monitoring tools (Nagios, Zabbix, Prometheus, Datadog, AWS CloudWatch, Azure Monitor, Google Cloud Monitoring)",
         "Select the most appropriate solution for an OpenStack cloud environment",
@@ -359,7 +359,7 @@ const PROJECTS = {
       steps:[
         "Comparative study of 7 monitoring tools based on: cloud integration, ease of installation, features, usability and cost",
         "Selection of Nagios XI for its versatility, open-source nature, advanced alert management and OpenStack compatibility",
-        "Cloud architecture deployment on OpenStack: router (servers-net-router), Nagios XI server, web server, MariaDB database server and Windows Server — all on internal network 10.0.0.0/24",
+        "Cloud architecture deployment on Infomaniak Cloud (OpenStack) : router (servers-net-router), Nagios XI server, web server, MariaDB database server and Windows Server — all on internal network 10.0.0.0/24",
         "Installation of Nagios XI on Ubuntu 22.04 LTS via terminal commands",
         "Adding Linux hosts via NRPE agent, Windows hosts via NSClient++ agent",
         "Adding web server monitoring (availability, response time) and MySQL database monitoring",
@@ -368,7 +368,7 @@ const PROJECTS = {
         "SMS alerts configuration via Twilio API",
         "Full testing: service stops/restarts (Nginx, MySQL), simulated network outages, alert reception validation on all 3 channels"
       ],
-      tools:["Nagios XI","OpenStack","Ubuntu 22.04 LTS","NRPE (Linux agent)","NSClient++ (Windows agent)","Postfix / Gmail SMTP","Twilio (SMS)","Telegram Bot API","MariaDB","Nginx","KVM / Nova / Neutron"],
+      tools:["Nagios XI","OpenStack","Ubuntu 22.04 LTS","NRPE (Linux agent)","NSClient++ (Windows agent)","Postfix / Gmail SMTP","Twilio (SMS)","Telegram Bot API","MariaDB","Nginx","Infomaniak Cloud (OpenStack)","Nova / Neutron / Cinder"],
       result:"Fully operational monitoring solution covering 4 hosts (Linux, Windows, web server, database). Alerts successfully received in real time via email, SMS and Telegram during tests. The platform detects service incidents instantly and notifies administrators with no significant delay.",
       bg:"linear-gradient(135deg,#0a1628,#0d1f3a)"
     },
@@ -415,7 +415,7 @@ const PROJECTS = {
       category:"Cloud & Infrastructure",
       title:"Solution de Supervision Cloud",
       context:"Rapport de licence — ISI Dakar, 2023-2024",
-      summary:"Étude et mise en place d'une solution de supervision réseau utilisant Nagios XI, déployée sur une infrastructure cloud OpenStack. L'objectif était de disposer d'une surveillance centralisée et en temps réel de tous les services critiques : serveurs Linux, Windows, serveur web et base de données MySQL, avec des alertes multi-canaux (email, SMS, Telegram).",
+      summary:"Étude et mise en place d'une solution de supervision réseau utilisant Nagios XI, déployée sur le cloud Infomaniak. L'objectif était de disposer d'une surveillance centralisée et en temps réel de tous les services critiques : serveurs Linux, Windows, serveur web et base de données MySQL, avec des alertes multi-canaux (email, SMS, Telegram).",
       objectives:[
         "Analyser et comparer les outils de supervision cloud disponibles (Nagios, Zabbix, Prometheus, Datadog, AWS CloudWatch, Azure Monitor, Google Cloud Monitoring)",
         "Sélectionner la solution la plus adaptée à un environnement cloud OpenStack",
@@ -426,7 +426,7 @@ const PROJECTS = {
       steps:[
         "Étude comparative de 7 outils de supervision selon les critères : intégration cloud, facilité d'installation, fonctionnalités, facilité d'utilisation et coût",
         "Sélection de Nagios XI pour sa polyvalence, son caractère open source, sa gestion avancée des alertes et sa compatibilité avec OpenStack",
-        "Déploiement de l'architecture cloud sur OpenStack : routeur (servers-net-router), serveur Nagios XI, serveur web, serveur de base de données MariaDB et Windows Server — tous sur le réseau interne 10.0.0.0/24",
+        "Déploiement de l'architecture cloud sur Infomaniak (OpenStack) : routeur (servers-net-router), serveur Nagios XI, serveur web, serveur de base de données MariaDB et Windows Server — tous sur le réseau interne 10.0.0.0/24",
         "Installation de Nagios XI sur Ubuntu 22.04 LTS via les commandes terminal",
         "Ajout des hôtes Linux via l'agent NRPE, des hôtes Windows via l'agent NSClient++",
         "Ajout de la supervision du serveur web (disponibilité, temps de réponse) et de la base de données MySQL",
@@ -435,7 +435,7 @@ const PROJECTS = {
         "Configuration des alertes SMS via l'API Twilio",
         "Tests complets : arrêts/redémarrages de services (Nginx, MySQL), simulation de pannes réseau, validation de la réception des alertes sur les 3 canaux"
       ],
-      tools:["Nagios XI","OpenStack","Ubuntu 22.04 LTS","NRPE (agent Linux)","NSClient++ (agent Windows)","Postfix / Gmail SMTP","Twilio (SMS)","API Telegram Bot","MariaDB","Nginx","KVM / Nova / Neutron"],
+      tools:["Nagios XI","OpenStack","Ubuntu 22.04 LTS","NRPE (agent Linux)","NSClient++ (agent Windows)","Postfix / Gmail SMTP","Twilio (SMS)","API Telegram Bot","MariaDB","Nginx","Infomaniak Cloud (OpenStack)","Nova / Neutron / Cinder"],
       result:"Solution de supervision entièrement opérationnelle couvrant 4 hôtes (Linux, Windows, serveur web, base de données). Alertes reçues en temps réel par email, SMS et Telegram lors des tests. La plateforme détecte les incidents de service instantanément et notifie les administrateurs sans délai significatif.",
       bg:"linear-gradient(135deg,#0a1628,#0d1f3a)"
     },
