@@ -111,6 +111,19 @@ section{padding:5rem 2rem}
 .contact-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 .contact-meta{display:flex;align-items:center;justify-content:center;gap:8px;font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);margin-top:1.25rem}
 footer{padding:1.5rem 2rem;text-align:center;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:11px;color:var(--text3)}
+
+@media(min-width: 1200px) {
+  .skills-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Écran moyen (861px à 1199px) : 3 colonnes (3 cartes haut, 2 bas) */
+@media(min-width: 861px) and (max-width: 1199px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 @media(max-width:860px){
   .hero-inner{grid-template-columns:1fr;text-align:center;gap:2rem}
   .hero-tag{justify-content:center}
