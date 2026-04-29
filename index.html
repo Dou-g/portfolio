@@ -22,7 +22,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2rem;height:56px;d
 .lang-toggle{display:flex;gap:4px;margin-left:16px}
 .lang-btn{font-family:'DM Mono',monospace;font-size:11px;padding:4px 10px;border:1px solid var(--border2);border-radius:4px;background:transparent;color:var(--text3);cursor:pointer;transition:all .2s;letter-spacing:.06em}
 .lang-btn.active{border-color:var(--accent);color:var(--accent);background:rgba(79,142,247,.08)}
-/* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;padding:6rem 2rem 4rem;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 55% 55% at 65% 45%,rgba(79,142,247,.06) 0%,transparent 70%),radial-gradient(ellipse 35% 35% at 15% 75%,rgba(45,224,176,.04) 0%,transparent 60%);pointer-events:none}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:52px 52px;opacity:.25;mask-image:radial-gradient(ellipse 90% 80% at 50% 50%,black 20%,transparent 100%)}
@@ -41,24 +40,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2rem;height:56px;d
 .btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:#3a7de8;transform:translateY(-1px)}
 .btn-outline{background:transparent;color:var(--text2);border:1px solid var(--border2)}.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-/* PHOTO */
 .photo-frame{width:200px;height:240px;border-radius:20px;border:1px solid var(--border2);position:relative;overflow:hidden;background:var(--card);animation:fadeUp .5s .1s ease both;flex-shrink:0}
 .photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
 .photo-accent{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
 .photo-badge{position:absolute;bottom:14px;left:14px;background:rgba(9,13,19,.88);backdrop-filter:blur(8px);border:1px solid var(--border2);border-radius:8px;padding:6px 10px}
 .photo-badge p{font-family:'DM Mono',monospace;font-size:10px;color:var(--accent2);letter-spacing:.06em}
-/* LAYOUT */
 section{padding:5rem 2rem}
 .container{max-width:1060px;margin:0 auto}
 .section-label{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem}
 .section-heading{font-size:clamp(1.5rem,3vw,2rem);font-weight:600;letter-spacing:-.02em;margin-bottom:2.5rem}
 .section-heading span{color:var(--text2);font-weight:300}
-/* STATS */
 .stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:3rem}
 .stat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.25rem;text-align:center}
 .stat-num{font-size:2rem;font-weight:700;letter-spacing:-.03em;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .stat-label{font-size:11px;color:var(--text3);margin-top:4px;font-family:'DM Mono',monospace;letter-spacing:.04em}
-/* SKILLS */
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
 .skill-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:border-color .2s,transform .2s}
 .skill-card:hover{border-color:var(--border2);transform:translateY(-2px)}
@@ -66,7 +61,6 @@ section{padding:5rem 2rem}
 .skill-cat{font-size:13px;font-weight:600;margin-bottom:.75rem}
 .tags{display:flex;flex-wrap:wrap;gap:5px}
 .tag{font-size:11px;padding:3px 9px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid var(--border2);color:var(--text2);font-family:'DM Mono',monospace}
-/* PROJECTS GRID */
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(440px,1fr));gap:1.25rem}
 .proj-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color .25s,transform .25s;display:flex;flex-direction:column;cursor:pointer}
 .proj-card:hover{border-color:rgba(79,142,247,.4);transform:translateY(-3px)}
@@ -79,7 +73,6 @@ section{padding:5rem 2rem}
 .proj-more{font-size:12px;color:var(--accent);font-family:'DM Mono',monospace;display:flex;align-items:center;gap:5px;letter-spacing:.02em}
 .proj-more svg{width:12px;height:12px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
 .proj-card:hover .proj-more svg{transform:translateX(3px)}
-/* MODAL */
 .modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(5,8,15,.85);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .25s}
 .modal-overlay.open{opacity:1;pointer-events:all}
 .modal{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;width:100%;max-width:720px;max-height:88vh;overflow-y:auto;position:relative;transform:translateY(20px);transition:transform .25s}
@@ -99,7 +92,6 @@ section{padding:5rem 2rem}
 .modal-tool{font-size:12px;padding:4px 12px;border-radius:20px;border:1px solid var(--border2);color:var(--text2);background:rgba(255,255,255,.03);font-family:'DM Mono',monospace}
 .modal-result{background:rgba(45,224,176,.05);border:1px solid rgba(45,224,176,.15);border-radius:var(--radius-sm);padding:1rem 1.25rem;margin-top:.5rem}
 .modal-result p{font-size:13px;color:var(--text2);line-height:1.75}
-/* EDU */
 .edu-lang-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
 .timeline{position:relative;padding-left:1.5rem}
 .timeline::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:var(--border)}
@@ -112,7 +104,6 @@ section{padding:5rem 2rem}
 .lang-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:.85rem 1.1rem;display:flex;justify-content:space-between;align-items:center}
 .lang-name{font-size:13px;font-weight:500}
 .lang-lvl{font-size:11px;color:var(--text3);font-family:'DM Mono',monospace}
-/* CONTACT */
 .contact-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2.5rem;text-align:center;max-width:540px;margin:0 auto;position:relative;overflow:hidden}
 .contact-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(79,142,247,.06) 0%,transparent 70%);pointer-events:none}
 .contact-title{font-size:1.6rem;font-weight:700;margin-bottom:.6rem;letter-spacing:-.02em}
@@ -120,7 +111,6 @@ section{padding:5rem 2rem}
 .contact-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 .contact-meta{display:flex;align-items:center;justify-content:center;gap:8px;font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);margin-top:1.25rem}
 footer{padding:1.5rem 2rem;text-align:center;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:11px;color:var(--text3)}
-/* RESPONSIVE - Version corrigée avec photo visible sur mobile */
 @media(max-width:860px){
   .hero-inner{grid-template-columns:1fr;text-align:center;gap:2rem}
   .hero-tag{justify-content:center}
@@ -202,25 +192,46 @@ footer{padding:1.5rem 2rem;text-align:center;border-top:1px solid var(--border);
     <p class="section-label" id="lbl-skills-tag">Expertise</p>
     <h2 class="section-heading" id="lbl-skills-heading">Technical <span>Skills</span></h2>
     <div class="skills-grid">
+      <!-- Carte 1: Networking -->
       <div class="skill-card">
         <div class="skill-icon-wrap" style="background:rgba(79,142,247,.08);border-color:rgba(79,142,247,.2)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg></div>
         <p class="skill-cat" id="cat-net">Networking</p>
         <div class="tags"><span class="tag">LAN/VLAN</span><span class="tag">OSPF</span><span class="tag">HSRP</span><span class="tag">STP</span><span class="tag">EtherChannel</span><span class="tag">Cisco</span></div>
       </div>
+      <!-- Carte 2: Systems -->
       <div class="skill-card">
         <div class="skill-icon-wrap" style="background:rgba(45,224,176,.08);border-color:rgba(45,224,176,.2)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2de0b0" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
         <p class="skill-cat" id="cat-sys">Systems</p>
         <div class="tags"><span class="tag">Linux/Unix</span><span class="tag">CentOS</span><span class="tag">Debian</span><span class="tag">Windows Server</span><span class="tag">WDS/SCCM</span></div>
       </div>
+      <!-- Carte 3: Monitoring & Messaging -->
       <div class="skill-card">
         <div class="skill-icon-wrap" style="background:rgba(247,147,79,.08);border-color:rgba(247,147,79,.2)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f7934f" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
         <p class="skill-cat" id="cat-virt">Monitoring & Messaging</p>
         <div class="tags"><span class="tag">Splunk</span><span class="tag">Nagios XI</span><span class="tag">Exchange 2019</span><span class="tag">rsyslog</span><span class="tag">NTP</span></div>
       </div>
+      <!-- Carte 4: Virtualization & IT Support -->
       <div class="skill-card">
         <div class="skill-icon-wrap" style="background:rgba(79,142,247,.08);border-color:rgba(79,142,247,.2)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <p class="skill-cat" id="cat-support">Virtualization & IT Support</p>
         <div class="tags"><span class="tag">VMware</span><span class="tag">Proxmox</span><span class="tag">GNS3</span><span class="tag">EVE-NG</span><span class="tag">Maintenance</span><span class="tag">Diagnostics</span></div>
+      </div>
+      <!-- Carte 5: Office & Productivity (NOUVELLE) -->
+      <div class="skill-card">
+        <div class="skill-icon-wrap" style="background:rgba(45,224,176,.08);border-color:rgba(45,224,176,.2)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2de0b0" stroke-width="1.5">
+            <rect x="2" y="4" width="20" height="16" rx="2" ry="2"/>
+            <line x1="8" y1="10" x2="16" y2="10"/>
+            <line x1="8" y1="14" x2="12" y2="14"/>
+          </svg>
+        </div>
+        <p class="skill-cat" id="cat-office">Office & Productivity</p>
+        <div class="tags">
+          <span class="tag" id="office-ms">Microsoft Office (Word/Excel/PPT)</span>
+          <span class="tag" id="office-asset">IT Asset Management</span>
+          <span class="tag" id="office-glpi">GLPI</span>
+          <span class="tag" id="office-ticketing">Ticketing System</span>
+        </div>
       </div>
     </div>
   </div>
@@ -376,7 +387,8 @@ function closeModalOutside(e) {
   if(e.target === document.getElementById('modal-overlay')) closeModal();
 }
 
-const T={en:{"nav-about":"About","nav-skills":"Skills","nav-projects":"Projects","nav-edu":"Education","nav-contact":"Contact","hero-tag":"Available for internship · Dakar, Senegal","hero-subtitle":"Network & IT Systems Technician — specializing in network administration, Linux/Windows systems, virtualization & IT support.","badge-text":"OPEN TO WORK","cta-contact":"Get in touch","cta-projects":"View projects","stat1":"Key Projects","stat2":"Years Learning","stat3":"Tools Mastered","stat4":"Languages","about-text":"Graduate with a Professional Bachelor's Degree in Networking and Computer Systems from ISI Dakar, passionate about information technology. Strong skills in network administration, Linux/Windows systems management, virtualization, and IT security.","lbl-skills-tag":"Expertise","lbl-skills-heading":"Technical Skills","cat-net":"Networking","cat-sys":"Systems","cat-virt":"Monitoring & Messaging","cat-support":"Virtualization & IT Support","t1":"Maintenance","t2":"Diagnostics","t3":"Tech Support","t4":"Firewall Config","t5":"Monitoring","lbl-proj-tag":"Portfolio","lbl-proj-heading":"Key Projects","lbl-edu-tag":"Background","lbl-edu-heading":"Education","edu1":"Professional Bachelor's — Networking & IT Systems","edu2":"Scientific Baccalaureate (S2)","edu3":"Middle School Certificate (BFEM)","lbl-lang-tag":"Languages","lbl-lang-heading":"Languages & Other","lang-fr":"French","lang-fr-lvl":"Native","lang-wo":"Wolof","lang-wo-lvl":"Native","lang-en":"English","lang-en-lvl":"Intermediate (B1)","misc-license":"Driving License B","misc-avail":"· Available immediately","contact-title":"Let's work together","contact-sub":"Available for an IT support internship or remote freelance missions. Fast response guaranteed.","cta-email":"Send an email","cta-call":"Call me"},fr:{"nav-about":"À propos","nav-skills":"Compétences","nav-projects":"Projets","nav-edu":"Formation","nav-contact":"Contact","hero-tag":"Disponible pour un stage · Dakar, Sénégal","hero-subtitle":"Technicien Réseaux & Systèmes Informatiques — spécialisé en administration réseaux, systèmes Linux/Windows, virtualisation & support informatique.","badge-text":"DISPONIBLE","cta-contact":"Me contacter","cta-projects":"Voir les projets","stat1":"Projets réalisés","stat2":"Ans de formation","stat3":"Outils maîtrisés","stat4":"Langues","about-text":"Diplômé d'une Licence Professionnelle en Réseaux et Systèmes Informatiques à l'ISI Dakar, passionné par les technologies de l'information. Compétences solides en administration de réseaux, gestion de systèmes Linux/Windows, virtualisation et sécurité.","lbl-skills-tag":"Expertise","lbl-skills-heading":"Compétences techniques","cat-net":"Réseaux","cat-sys":"Systèmes","cat-virt":"Monitoring & Messagerie","cat-support":"Virtualisation & Support IT","t1":"Maintenance","t2":"Diagnostic","t3":"Assistance technique","t4":"Config. pare-feu","t5":"Surveillance","lbl-proj-tag":"Portfolio","lbl-proj-heading":"Projets clés","lbl-edu-tag":"Parcours","lbl-edu-heading":"Formation","edu1":"Licence Professionnelle — Réseaux & Systèmes","edu2":"Baccalauréat Scientifique (S2)","edu3":"BFEM","lbl-lang-tag":"Langues","lbl-lang-heading":"Langues & Divers","lang-fr":"Français","lang-fr-lvl":"Natif","lang-wo":"Wolof","lang-wo-lvl":"Natif","lang-en":"Anglais","lang-en-lvl":"Intermédiaire (B1)","misc-license":"Permis B","misc-avail":"· Disponible immédiatement","contact-title":"Travaillons ensemble","contact-sub":"Disponible pour un stage en support informatique ou des missions freelance à distance. Réponse rapide garantie.","cta-email":"Envoyer un email","cta-call":"Appeler"}};
+const T={en:{"nav-about":"About","nav-skills":"Skills","nav-projects":"Projects","nav-edu":"Education","nav-contact":"Contact","hero-tag":"Available for internship · Dakar, Senegal","hero-subtitle":"Network & IT Systems Technician — specializing in network administration, Linux/Windows systems, virtualization & IT support.","badge-text":"OPEN TO WORK","cta-contact":"Get in touch","cta-projects":"View projects","stat1":"Key Projects","stat2":"Years Learning","stat3":"Tools Mastered","stat4":"Languages","about-text":"Graduate with a Professional Bachelor's Degree in Networking and Computer Systems from ISI Dakar, passionate about information technology. Strong skills in network administration, Linux/Windows systems management, virtualization, and IT security.","lbl-skills-tag":"Expertise","lbl-skills-heading":"Technical Skills","cat-net":"Networking","cat-sys":"Systems","cat-virt":"Monitoring & Messaging","cat-support":"Virtualization & IT Support","cat-office":"Office & Productivity","office-ms":"Microsoft Office (Word/Excel/PPT)","office-asset":"IT Asset Management","office-glpi":"GLPI","office-ticketing":"Ticketing System","t1":"Maintenance","t2":"Diagnostics","t3":"Tech Support","t4":"Firewall Config","t5":"Monitoring","lbl-proj-tag":"Portfolio","lbl-proj-heading":"Key Projects","lbl-edu-tag":"Background","lbl-edu-heading":"Education","edu1":"Professional Bachelor's — Networking & IT Systems","edu2":"Scientific Baccalaureate (S2)","edu3":"Middle School Certificate (BFEM)","lbl-lang-tag":"Languages","lbl-lang-heading":"Languages & Other","lang-fr":"French","lang-fr-lvl":"Native","lang-wo":"Wolof","lang-wo-lvl":"Native","lang-en":"English","lang-en-lvl":"Intermediate (B1)","misc-license":"Driving License B","misc-avail":"· Available immediately","contact-title":"Let's work together","contact-sub":"Available for an IT support internship or remote freelance missions. Fast response guaranteed.","cta-email":"Send an email","cta-call":"Call me"},
+fr:{"nav-about":"À propos","nav-skills":"Compétences","nav-projects":"Projets","nav-edu":"Formation","nav-contact":"Contact","hero-tag":"Disponible pour un stage · Dakar, Sénégal","hero-subtitle":"Technicien Réseaux & Systèmes Informatiques — spécialisé en administration réseaux, systèmes Linux/Windows, virtualisation & support informatique.","badge-text":"DISPONIBLE","cta-contact":"Me contacter","cta-projects":"Voir les projets","stat1":"Projets réalisés","stat2":"Ans de formation","stat3":"Outils maîtrisés","stat4":"Langues","about-text":"Diplômé d'une Licence Professionnelle en Réseaux et Systèmes Informatiques à l'ISI Dakar, passionné par les technologies de l'information. Compétences solides en administration de réseaux, gestion de systèmes Linux/Windows, virtualisation et sécurité.","lbl-skills-tag":"Expertise","lbl-skills-heading":"Compétences techniques","cat-net":"Réseaux","cat-sys":"Systèmes","cat-virt":"Monitoring & Messagerie","cat-support":"Virtualisation & Support IT","cat-office":"Bureautique & Productivité","office-ms":"Microsoft Office (Word/Excel/PPT)","office-asset":"Gestion de parc informatique","office-glpi":"GLPI","office-ticketing":"Système de tickets","t1":"Maintenance","t2":"Diagnostic","t3":"Assistance technique","t4":"Config. pare-feu","t5":"Surveillance","lbl-proj-tag":"Portfolio","lbl-proj-heading":"Projets clés","lbl-edu-tag":"Parcours","lbl-edu-heading":"Formation","edu1":"Licence Professionnelle — Réseaux & Systèmes","edu2":"Baccalauréat Scientifique (S2)","edu3":"BFEM","lbl-lang-tag":"Langues","lbl-lang-heading":"Langues & Divers","lang-fr":"Français","lang-fr-lvl":"Natif","lang-wo":"Wolof","lang-wo-lvl":"Natif","lang-en":"Anglais","lang-en-lvl":"Intermédiaire (B1)","misc-license":"Permis B","misc-avail":"· Disponible immédiatement","contact-title":"Travaillons ensemble","contact-sub":"Disponible pour un stage en support informatique ou des missions freelance à distance. Réponse rapide garantie.","cta-email":"Envoyer un email","cta-call":"Appeler"}};
 
 function setLang(l){
   currentLang=l;
